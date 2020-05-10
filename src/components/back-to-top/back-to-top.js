@@ -5,11 +5,12 @@ import scrollTo from 'gatsby-plugin-smoothscroll'
 import { FaChevronUp } from 'react-icons/fa'
 
 import '@bit/mcmanus68.ui-react.styles'
+
 import style from './back-to-top.module.scss'
 
 const BackToTop = ({ anchor }) => {
   return (
-    <div className={style.backtotop}>
+    <div className={style['back-to-top']}>
       <a onClick={() => scrollTo('#' + anchor)}>
         <FaChevronUp className={style.chevron} />
       </a>
