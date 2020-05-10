@@ -1,12 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import style from './button.scss'
+import '@bit/mcmanus68.ui-react.styles'
+import style from './button.module.scss'
 
-const Button = ({ text, onClick, className }) => {
+const Button = ({ children, className, ...otherProps }) => {
   return (
-    <button className={`${style.button}${className}`} onClick={onClick}>
-      {text}
+    <button className={[style.button, className].join(' ')} {...otherProps}>
+      {children}
     </button>
   )
 }
@@ -14,13 +15,6 @@ const Button = ({ text, onClick, className }) => {
 export default Button
 
 Button.propTypes = {
-  text: PropTypes.string,
-  onClick: PropTypes.func,
+  children: PropTypes.node,
   className: PropTypes.string,
-}
-
-Button.defaultProps = {
-  text: null,
-  onClick: null,
-  className: '',
 }

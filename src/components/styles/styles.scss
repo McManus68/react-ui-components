@@ -1,0 +1,105 @@
+@import '_variables';
+
+// Default values
+:root {
+  --primary-font: 'Source Sans Pro', sans-serif;
+  --secondary-font: 'Herr Von Muellerhoff', cursive;
+  --body-font: 'Cabin', sans-serif;
+
+  --primary-color: #c59d5f;
+  --secondary-color: #252525;
+
+  --primary-font-color: #515151;
+  --secondary-font-color: #fff;
+
+  --footer-bg-color: #121212;
+
+  --section-padding: 2.2rem 1.8rem;
+  --bloc-padding: 2.4rem;
+  --element-spacing: 1.2rem;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+html {
+  font-family: var(--body-font);
+  color: var(--primary-font-color);
+  scroll-behavior: smooth;
+}
+
+h1 {
+  color: var(--secondary-color);
+  font-size: 3.1rem;
+  font-family: var(--primary-font);
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 5px;
+  margin-right: -5px;
+}
+
+h2 {
+  font-size: 4.2rem;
+  font-family: var(--secondary-font);
+  color: var(--primary-color);
+  font-weight: 600;
+  line-height: 0.4;
+  letter-spacing: 2px;
+
+  &::first-letter {
+    text-transform: uppercase;
+    font-size: 5rem;
+  }
+}
+
+.container {
+  max-width: 1140px !important;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 2rem;
+}
+
+// Responsive Font Size
+@media only screen and (max-width: $sm) {
+  html {
+    font-size: 10px;
+  }
+}
+
+@media only screen and (min-width: $md) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (min-width: $lg) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: $xl) {
+  html {
+    font-size: 16px;
+  }
+}
