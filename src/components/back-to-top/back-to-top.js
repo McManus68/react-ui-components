@@ -10,7 +10,7 @@ import style from './back-to-top.module.scss'
 
 const BackToTop = ({ anchor }) => {
   return (
-    <div className={style['back-to-top']}>
+    <div className={style.backToTop}>
       <a onClick={() => scrollTo('#' + anchor)}>
         <FaChevronUp className={style.chevron} />
       </a>

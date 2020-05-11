@@ -5,9 +5,9 @@ import Image from '@bit/mcmanus68.ui-react.image'
 
 import '@bit/mcmanus68.ui-react.styles'
 
-import style from './bloc-image-gallery.module.scss'
+import style from './block-image-gallery.module.scss'
 
-const BlocImageGallery = ({ images, className }) => {
+const BlockImageGallery = ({ images, className }) => {
   const columns = Math.ceil(Math.sqrt(images.length))
   const height = images.length <= 2 ? 100 : Math.ceil(100 / columns) - 5
   return (
@@ -27,13 +27,13 @@ const BlocImageGallery = ({ images, className }) => {
   )
 }
 
-export default BlocImageGallery
+export default BlockImageGallery
 
-BlocImageGallery.propTypes = {
+BlockImageGallery.propTypes = {
   images: PropTypes.array.isRequired,
   className: PropTypes.string,
 }
 
-BlocImageGallery.defaultProps = {
+BlockImageGallery.defaultProps = {
   className: '',
 }
