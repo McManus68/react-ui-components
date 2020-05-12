@@ -3,13 +3,11 @@ import PropTypes from 'prop-types'
 
 import { Link } from 'gatsby'
 
-import '@bit/mcmanus68.ui-react.styles'
-
 import style from './link-text.module.scss'
 
 const LinkText = ({ className, children, to }) => {
   return (
-    <Link to={to} className={[style.linkText, className].join(' ')}>
+    <Link to={'/' + to} className={[style.linkText, className].join(' ')}>
       {children}
     </Link>
   )
@@ -18,6 +16,6 @@ const LinkText = ({ className, children, to }) => {
 export default LinkText
 
 LinkText.propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.string,
   className: PropTypes.string,
 }
