@@ -7,16 +7,34 @@ import '@bit/mcmanus68.ui-react.styles'
 
 import style from './block-image-gallery.module.scss'
 
-const BlockImageGallery = ({ images, className }) => {
-  const columns = Math.ceil(Math.sqrt(images.length))
-  const height = images.length <= 2 ? 100 : Math.ceil(100 / columns) - 5
+const BlockImageGallery = ({ images, className, display }) => {
+  let columns = -1
+  let rows = -1
+
+  switch (display) {
+    case 'Square': {
+      columns = Math.ceil(Math.sqrt(images.length))
+      rows = Math.ceil(images.length / columns)
+      break
+    }
+    case 'Vertical': {
+      rows = images.length
+      break
+    }
+    case 'Horizontal': {
+      columns = images.length
+      break
+    }
+  }
+
   return (
     <div
-      className={`${style.blocImageGallery} ${className}`}
+      className={`${style.blockImageGallery} ${className}`}
       style={{
         display: 'grid',
-        gridTemplateColumns: `repeat(${columns}, 1fr)`,
-        gridTemplateRows: `repeat(${columns}, ${height}%)`,
+        gridTemplateColumns:
+          columns === -1 ? `none` : `repeat(${columns}, 1fr)`,
+        gridTemplateRows: rows === -1 ? `none` : `repeat(${rows}, 1fr)`,
         gap: '1.5rem',
       }}
     >
@@ -32,8 +50,10 @@ export default BlockImageGallery
 BlockImageGallery.propTypes = {
   images: PropTypes.array.isRequired,
   className: PropTypes.string,
+  display: PropTypes.string,
 }
 
 BlockImageGallery.defaultProps = {
   className: '',
+  display: 'Square',
 }

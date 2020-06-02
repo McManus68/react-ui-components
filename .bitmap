@@ -29,7 +29,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "mcmanus68.ui-react/block-image-gallery@1.0.1": {
+    "mcmanus68.ui-react/block-image-gallery@1.0.10": {
         "files": [
             {
                 "relativePath": "src/components/block-image-gallery/block-image-gallery.js",

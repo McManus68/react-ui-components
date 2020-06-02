@@ -1,9 +1,3 @@
-.image-gallery {
-  .image {
-    transition: all 0.8s;
-
-    &:hover {
-      transform: scale(1.06) !important;
-    }
-  }
+.block-image-gallery {
+  height: 60vh;
 }
