@@ -18,7 +18,7 @@ const BlockContent = ({
 }) => {
   return (
     <Content className={className}>
-      <Headline title={title} subtitle={subtitle} />
+      <Headline title={title} subtitle={subtitle} titleColor='dark' />
       <HeadlineSeparator />
       {description ? <p>{description}</p> : <LoremIpsum p={1} />}
       <LinkText>{buttonText}</LinkText>

@@ -35,7 +35,7 @@ const BlockImageGallery = ({ images, className, display }) => {
         gridTemplateColumns:
           columns === -1 ? `none` : `repeat(${columns}, 1fr)`,
         gridTemplateRows: rows === -1 ? `none` : `repeat(${rows}, 1fr)`,
-        gap: '1.5rem',
+        gap: '1.4rem',
       }}
     >
       {images.map((image, i) => {

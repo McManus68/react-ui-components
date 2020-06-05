@@ -5,8 +5,7 @@ import { Container } from 'react-bootstrap'
 
 import Content from '@bit/mcmanus68.ui-react.content'
 import SectionParallax from '@bit/mcmanus68.ui-react.section-parallax'
-
-import Fade from 'react-reveal/Fade'
+import Headline from '@bit/mcmanus68.ui-react.headline'
 
 import '@bit/mcmanus68.ui-react.styles'
 
@@ -22,12 +21,7 @@ const SectionHeadline = ({ id, title, subtitle, image, height, overlay }) => (
   >
     <Container>
       <Content>
-        <Fade bottom delay={300}>
-          <h2>{subtitle}</h2>
-        </Fade>
-        <Fade top delay={600}>
-          <h1>{title}</h1>
-        </Fade>
+        <Headline title={title} subtitle={subtitle} />
       </Content>
     </Container>
   </SectionParallax>

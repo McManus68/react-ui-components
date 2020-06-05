@@ -3,18 +3,23 @@ import PropTypes from 'prop-types'
 
 import { FaAsterisk } from 'react-icons/fa'
 
-import '@bit/mcmanus68.ui-react.styles'
+import styled from 'styled-components'
 
-import style from './headline-separator.module.scss'
+const HeadlineSeparator = ({ className, primary }) => (
+  <FaAsterisk className={className} />
+)
 
-const HeadlineSeparator = ({ className }) => {
-  return (
-    <FaAsterisk className={[style.headlineSeparator, className].join(' ')} />
-  )
-}
+const StyledHeadlineSeparator = styled(HeadlineSeparator)`
+  color: ${props =>
+    props.primary ? props.theme.colors.primary : props.theme.colors.font};
+`
 
-export default HeadlineSeparator
+export default StyledHeadlineSeparator
 
 HeadlineSeparator.propTypes = {
-  className: PropTypes.string,
+  primary: PropTypes.bool,
+}
+
+HeadlineSeparator.defaultProps = {
+  primary: false,
 }
