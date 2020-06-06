@@ -14,15 +14,15 @@ const handleColor = (props, color) => {
     case 'dark':
       return props.theme.colors.fontDark
     default:
-      return props.theme.colors.font
+      return props.theme.colors.fontLight
   }
 }
 
 const StyledHeadline = styled.div`
   text-align: center;
 `
-const StyledH1 = styled.h1`
-  color: ${props => handleColor(props, props.titleColor)};
+const Title = styled.h1`
+  color: ${props => handleColor(props, props.color)};
   font-family: ${props => props.theme.fonts.primary};
   font-size: 3.1rem;
   text-transform: uppercase;
@@ -30,8 +30,8 @@ const StyledH1 = styled.h1`
   letter-spacing: 5px;
   margin-right: -5px;
 `
-const StyledH2 = styled.h2`
-  color: ${props => handleColor(props, props.subtitleColor)};
+const SubTitle = styled.h2`
+  color: ${props => handleColor(props, props.color)};
   font-family: ${props => props.theme.fonts.secondary};
   font-size: 4.2rem;
   font-weight: 600;
@@ -46,8 +46,8 @@ const StyledH2 = styled.h2`
 const Headline = ({ title, subtitle, titleColor, subtitleColor }) => {
   return (
     <StyledHeadline>
-      <StyledH2 subtitleColor={subtitleColor}>{subtitle}</StyledH2>
-      <StyledH1 titleColor={titleColor}>{title}</StyledH1>
+      <SubTitle color={subtitleColor}>{subtitle}</SubTitle>
+      <Title color={titleColor}>{title}</Title>
     </StyledHeadline>
   )
 }

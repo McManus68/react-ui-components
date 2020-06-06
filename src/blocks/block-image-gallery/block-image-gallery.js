@@ -3,11 +3,19 @@ import PropTypes from 'prop-types'
 
 import Image from '@bit/mcmanus68.ui-react.image'
 
-import '@bit/mcmanus68.ui-react.styles'
+import styled from 'styled-components'
 
-import style from './block-image-gallery.module.scss'
+const StyledBlockImageGallery = styled.div`
+  display: grid;
+  ${({ columns }) =>
+    columns !== -1 && `grid-template-columns: repeat(${columns}, 1fr);`}
+  ${({ rows }) =>
+    rows !== -1 && `grid-template-rows: repeat(${rows}, 1fr);`}
+  gap: 1.4rem;
+  height: 60vh;
+`
 
-const BlockImageGallery = ({ images, className, display }) => {
+const BlockImageGallery = ({ images, display }) => {
   let columns = -1
   let rows = -1
 
@@ -28,20 +36,11 @@ const BlockImageGallery = ({ images, className, display }) => {
   }
 
   return (
-    <div
-      className={`${style.blockImageGallery} ${className}`}
-      style={{
-        display: 'grid',
-        gridTemplateColumns:
-          columns === -1 ? `none` : `repeat(${columns}, 1fr)`,
-        gridTemplateRows: rows === -1 ? `none` : `repeat(${rows}, 1fr)`,
-        gap: '1.4rem',
-      }}
-    >
-      {images.map((image, i) => {
-        return <Image src={image} key={i} className={style.image} />
-      })}
-    </div>
+    <StyledBlockImageGallery rows={rows} columns={columns}>
+      {images.map((image, i) => (
+        <Image src={image} key={i} />
+      ))}
+    </StyledBlockImageGallery>
   )
 }
 
@@ -49,11 +48,9 @@ export default BlockImageGallery
 
 BlockImageGallery.propTypes = {
   images: PropTypes.array.isRequired,
-  className: PropTypes.string,
-  display: PropTypes.string,
+  display: PropTypes.oneOf(['Square', 'Vertical', 'Horizontal']),
 }
 
 BlockImageGallery.defaultProps = {
-  className: '',
   display: 'Square',
 }

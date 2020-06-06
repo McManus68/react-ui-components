@@ -1,17 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import '@bit/mcmanus68.ui-react.styles'
+import styled from 'styled-components'
 
-import style from './content.module.scss'
+const StyledContent = styled.div`
+  text-align: center;
+  padding: ${props => props.theme.block.padding};
 
-const Content = ({ children, className }) => {
-  return <div className={[style.content, className].join(' ')}>{children}</div>
+  & > *:not(:last-child) {
+    margin-bottom: ${props => props.theme.block.spacing};
+  }
+`
+const Content = ({ children }) => {
+  return <StyledContent>{children}</StyledContent>
 }
 
 export default Content
 
 Content.propTypes = {
   children: PropTypes.node.isRequired,
-  className: PropTypes.string,
 }

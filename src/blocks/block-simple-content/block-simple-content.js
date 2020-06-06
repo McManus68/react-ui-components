@@ -9,7 +9,7 @@ import Headline from '@bit/mcmanus68.ui-react.headline'
 import LinkText from '@bit/mcmanus68.ui-react.link-text'
 import HeadlineSeparator from '@bit/mcmanus68.ui-react.headline-separator'
 
-const BlockContent = ({
+const BlockSimpleContent = ({
   title,
   subtitle,
   description,
@@ -26,9 +26,9 @@ const BlockContent = ({
   )
 }
 
-export default BlockContent
+export default BlockSimpleContent
 
-BlockContent.propTypes = {
+BlockSimpleContent.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
   description: PropTypes.string,
@@ -36,6 +36,6 @@ BlockContent.propTypes = {
   buttonText: PropTypes.string,
 }
 
-BlockContent.defaultProps = {
+BlockSimpleContent.defaultProps = {
   className: '',
 }

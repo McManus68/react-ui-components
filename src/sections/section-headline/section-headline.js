@@ -7,18 +7,8 @@ import Content from '@bit/mcmanus68.ui-react.content'
 import SectionParallax from '@bit/mcmanus68.ui-react.section-parallax'
 import Headline from '@bit/mcmanus68.ui-react.headline'
 
-import '@bit/mcmanus68.ui-react.styles'
-
-import style from './section-headline.module.scss'
-
 const SectionHeadline = ({ id, title, subtitle, image, height, overlay }) => (
-  <SectionParallax
-    id={id}
-    image={image}
-    height={height}
-    className={style.sectionHeadline}
-    overlay={overlay}
-  >
+  <SectionParallax id={id} image={image} height={height} overlay={overlay}>
     <Container>
       <Content>
         <Headline title={title} subtitle={subtitle} />

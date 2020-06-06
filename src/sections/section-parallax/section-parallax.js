@@ -4,40 +4,39 @@ import PropTypes from 'prop-types'
 import { useSelector } from 'react-redux'
 import { Parallax } from 'react-parallax'
 
-import '@bit/mcmanus68.ui-react.styles'
+import styled from 'styled-components'
 
-import style from './section-parallax.module.scss'
-
+const StyledParallax = styled(Parallax)`
+  width: 100%;
+`
+const Overlay = styled.div`
+  display: flex;
+  align-items: center;
+  height: ${props => props.height}vh;
+  background-color: ${props => props.overlay};
+`
 const SectionParallax = ({
   id,
-  children,
   className,
+  children,
   image,
   height,
   overlay,
 }) => {
   const bg = useSelector(state => state.image.images).get(image)
   return (
-    <section className={className} id={id}>
-      <Parallax
+    <section id={id} className={className}>
+      <StyledParallax
         bgImage={bg.src}
         strength={300}
-        className={style.sectionParallax}
         bgImageStyle={{
           objectFit: 'cover',
         }}
       >
-        <div
-          style={{
-            height: `${height}vh`,
-            display: 'flex',
-            alignItems: 'center',
-            backgroundColor: overlay,
-          }}
-        >
+        <Overlay height={height} overlay={overlay}>
           {children}
-        </div>
-      </Parallax>
+        </Overlay>
+      </StyledParallax>
     </section>
   )
 }

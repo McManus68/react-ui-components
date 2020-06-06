@@ -1,8 +1,0 @@
-.content {
-  text-align: center;
-  padding: var(--bloc-padding);
-
-  & > *:not(:last-child) {
-    margin-bottom: var(--element-spacing);
-  }
-}

@@ -1,15 +1,38 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import '@bit/mcmanus68.ui-react.styles'
+import styled from 'styled-components'
 
-import style from './button.module.scss'
+const StyledButton = styled.button`
+  display: inline-block;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  letter-spacing: 2px;
+  margin-right: -2px;
+  background-color: ${props =>
+    props.color === 'primary'
+      ? props.theme.colors.primary
+      : props.theme.colors.secondary};
+  padding: 8px 16px;
+  color: ${props => props.theme.colors.fontLight};
+  border-radius: 3px;
+  transition: background-color 0.5s;
 
-const Button = ({ children, className, ...otherProps }) => {
+  &:focus,
+  &:hover {
+    background-color: ${props =>
+      props.color === 'primary'
+        ? props.theme.colors.primaryDark
+        : props.theme.colors.secondaryDark};
+  }
+`
+
+const Button = ({ children, color, ...otherProps }) => {
   return (
-    <button className={[style.button, className].join(' ')} {...otherProps}>
+    <StyledButton color={color} {...otherProps}>
       {children}
-    </button>
+    </StyledButton>
   )
 }
 
@@ -17,5 +40,9 @@ export default Button
 
 Button.propTypes = {
   children: PropTypes.node,
-  className: PropTypes.string,
+  color: PropTypes.oneOf(['primary', 'secondary']),
+}
+
+Button.defaultProps = {
+  color: 'primary',
 }

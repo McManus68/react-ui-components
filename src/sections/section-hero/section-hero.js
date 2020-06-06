@@ -10,9 +10,86 @@ import Button from '@bit/mcmanus68.ui-react.button'
 import Headline from '@bit/mcmanus68.ui-react.headline'
 import HeadlineSeparator from '@bit/mcmanus68.ui-react.headline-separator'
 
-import '@bit/mcmanus68.ui-react.styles'
+import { fadeUp, scale, grow, spin, fadeDown } from './keyframes'
 
-import style from './section-hero.module.scss'
+import styled from 'styled-components'
+
+const Hero = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  h1 {
+    animation: ${scale} 0.5s forwards;
+  }
+
+  h2 {
+    opacity: 0;
+    animation: ${fadeUp} 0.5s forwards;
+    animation-delay: 0.5s;
+  }
+`
+const SeparatorContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+const Line = styled.div`
+  width: 100%;
+  max-width: 8.4rem;
+  height: 2px;
+  background-color: ${props => props.theme.colors.fontLight};
+  position: relative;
+  opacity: 0;
+  animation: ${grow} 2s forwards;
+  animation-delay: 0.9s;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 0.4rem solid transparent;
+    opacity: 0;
+    animation: ${grow} 0.5s forwards;
+    animation-delay: 1.2s;
+  }
+`
+const LineLeft = styled(Line)`
+  &:before {
+    border-left-color: ${props => props.theme.colors.fontLight};
+    left: 0;
+  }
+`
+const LineRight = styled(Line)`
+  &:before {
+    border-right-color: ${props => props.theme.colors.fontLight};
+    left: 0;
+  }
+`
+const Separator = styled(HeadlineSeparator)`
+  color: ${props => props.theme.colors.primary};
+  margin: 0 0.4rem;
+  opacity: 0;
+  animation: ${spin} 0.5s forwards;
+  animation-delay: 0.7s;
+`
+const Description = styled.h5`
+  color: ${props => props.theme.colors.fontLight};
+  font-size: 0.9rem;
+  font-weight: 100;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  letter-spacing: 3px;
+  margin-right: -3px;
+`
+const AnimationContainer = styled.div`
+  opacity: 0;
+  animation: ${fadeDown} 0.5s forwards;
+  animation-delay: 1.5s;
+`
 
 const SectionHero = ({ title, subtitle, image, overlay }) => {
   const goToHome = () => {
@@ -20,24 +97,21 @@ const SectionHero = ({ title, subtitle, image, overlay }) => {
   }
 
   return (
-    <SectionParallax
-      className={style.hero}
-      image={image}
-      overlay={overlay}
-      id='hero'
-    >
-      <Container>
-        <Headline title={title} subtitle={subtitle} />
-        <div className={style.separator}>
-          <div className={`${style.line} ${style.lineLeft} `}></div>
-          <HeadlineSeparator className={style.headlineSeparator} />
-          <div className={`${style.line} ${style.lineRight} `}></div>
-        </div>
-        <div className={style.singleAnimation}>
-          <h5>Ready to be opened</h5>
-          <Button onClick={goToHome}>Explore</Button>
-        </div>
-      </Container>
+    <SectionParallax image={image} overlay={overlay} id='hero'>
+      <Hero>
+        <Container>
+          <Headline title={title} subtitle={subtitle} />
+          <SeparatorContainer>
+            <LineLeft />
+            <Separator />
+            <LineRight />
+          </SeparatorContainer>
+          <AnimationContainer>
+            <Description>Ready to be opened</Description>
+            <Button onClick={goToHome}>Explore</Button>
+          </AnimationContainer>
+        </Container>
+      </Hero>
     </SectionParallax>
   )
 }

@@ -11,7 +11,7 @@ const HeadlineSeparator = ({ className, primary }) => (
 
 const StyledHeadlineSeparator = styled(HeadlineSeparator)`
   color: ${props =>
-    props.primary ? props.theme.colors.primary : props.theme.colors.font};
+    props.primary ? props.theme.colors.primary : props.theme.colors.fontDark};
 `
 
 export default StyledHeadlineSeparator
