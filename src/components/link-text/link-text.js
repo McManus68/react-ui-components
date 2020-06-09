@@ -8,7 +8,6 @@ import styled from 'styled-components'
 const LinkText = ({ color, className, children, to }) => (
   <Link to={'/' + to} className={className}>
     {children}
-    {console.log('props:', color)}
   </Link>
 )
 
@@ -18,7 +17,7 @@ const StyledLinkText = styled(LinkText)`
   cursor: pointer;
   letter-spacing: 2px;
   margin-right: -2px;
-  color: ${props => props.theme.colors.primary};
+  color: ${props => props.theme.color.primary};
   position: relative;
   transition: color 0.5s;
   text-align: center;
@@ -30,18 +29,18 @@ const StyledLinkText = styled(LinkText)`
     bottom: -3px;
     width: 100%;
     height: 2px;
-    background-color: ${props => props.theme.colors.primary};
+    background-color: ${props => props.theme.color.primary};
     transition: background-color 0.5s;
   }
 
   &:hover,
   &:focus {
-    color: ${props => props.theme.colors.primaryDark};
+    color: ${props => props.theme.color.primaryDark};
   }
 
   &:hover::before,
   &:focus::before {
-    background-color: ${props => props.theme.colors.primaryDark};
+    background-color: ${props => props.theme.color.primaryDark};
   }
 `
 

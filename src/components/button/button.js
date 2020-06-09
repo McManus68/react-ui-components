@@ -12,10 +12,10 @@ const StyledButton = styled.button`
   margin-right: -2px;
   background-color: ${props =>
     props.color === 'primary'
-      ? props.theme.colors.primary
-      : props.theme.colors.secondary};
+      ? props.theme.color.primary
+      : props.theme.color.secondary};
   padding: 8px 16px;
-  color: ${props => props.theme.colors.fontLight};
+  color: currentColor;
   border-radius: 3px;
   transition: background-color 0.5s;
 
@@ -23,8 +23,8 @@ const StyledButton = styled.button`
   &:hover {
     background-color: ${props =>
       props.color === 'primary'
-        ? props.theme.colors.primaryDark
-        : props.theme.colors.secondaryDark};
+        ? props.theme.color.primaryDark
+        : props.theme.color.secondaryDark};
   }
 `
 

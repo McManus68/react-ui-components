@@ -18,7 +18,7 @@ const BlockSimpleContent = ({
 }) => {
   return (
     <Content className={className}>
-      <Headline title={title} subtitle={subtitle} titleColor='dark' />
+      <Headline title={title} subtitle={subtitle} />
       <HeadlineSeparator />
       {description ? <p>{description}</p> : <LoremIpsum p={1} />}
       <LinkText>{buttonText}</LinkText>

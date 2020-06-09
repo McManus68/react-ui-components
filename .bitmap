@@ -19,17 +19,12 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "mcmanus68.ui-react/block-image-gallery@1.0.3": {
+    "mcmanus68.ui-react/block-image-gallery@1.0.10": {
         "files": [
             {
                 "relativePath": "src/blocks/block-image-gallery/block-image-gallery.js",
                 "test": false,
                 "name": "block-image-gallery.js"
-            },
-            {
-                "relativePath": "src/blocks/block-image-gallery/block-image-gallery.module.scss",
-                "test": false,
-                "name": "block-image-gallery.module.scss"
             },
             {
                 "relativePath": "src/blocks/block-image-gallery/index.js",
@@ -42,7 +37,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "mcmanus68.ui-react/block-simple-content@1.0.32": {
+    "mcmanus68.ui-react/block-simple-content@1.0.35": {
         "files": [
             {
                 "relativePath": "src/blocks/block-simple-content/block-simple-content.js",
@@ -60,7 +55,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "mcmanus68.ui-react/button@1.0.3": {
+    "mcmanus68.ui-react/button@1.0.6": {
         "files": [
             {
                 "relativePath": "src/components/button/button.js",
@@ -96,7 +91,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "mcmanus68.ui-react/footer-newsletter@1.0.34": {
+    "mcmanus68.ui-react/footer-newsletter@1.0.36": {
         "files": [
             {
                 "relativePath": "src/footer/footer-newsletter/footer-newsletter.js",
@@ -114,7 +109,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "mcmanus68.ui-react/footer-simple-content@1.0.32": {
+    "mcmanus68.ui-react/footer-simple-content@1.0.35": {
         "files": [
             {
                 "relativePath": "src/footer/footer-simple-content/footer-simple-content.js",
@@ -132,7 +127,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "mcmanus68.ui-react/footer-social@1.0.35": {
+    "mcmanus68.ui-react/footer-social@1.0.40": {
         "files": [
             {
                 "relativePath": "src/footer/footer-social/footer-social.js",
@@ -150,7 +145,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "mcmanus68.ui-react/headline-separator@1.0.7": {
+    "mcmanus68.ui-react/headline-separator@1.0.9": {
         "files": [
             {
                 "relativePath": "src/components/headline-separator/headline-separator.js",
@@ -168,7 +163,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "mcmanus68.ui-react/headline@1.0.13": {
+    "mcmanus68.ui-react/headline@1.0.16": {
         "files": [
             {
                 "relativePath": "src/components/headline/headline.js",
@@ -186,25 +181,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "mcmanus68.ui-react/image@1.0.0": {
-        "files": [
-            {
-                "relativePath": "src/components/image/image.js",
-                "test": false,
-                "name": "image.js"
-            },
-            {
-                "relativePath": "src/components/image/index.js",
-                "test": false,
-                "name": "index.js"
-            }
-        ],
-        "mainFile": "src/components/image/index.js",
-        "trackDir": "src/components/image",
-        "origin": "AUTHORED",
-        "exported": true
-    },
-    "mcmanus68.ui-react/link-text@1.0.12": {
+    "mcmanus68.ui-react/link-text@1.0.13": {
         "files": [
             {
                 "relativePath": "src/components/link-text/index.js",
@@ -227,7 +204,25 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "mcmanus68.ui-react/section-headline@1.0.13": {
+    "mcmanus68.ui-react/nav-default@1.0.1": {
+        "files": [
+            {
+                "relativePath": "src/nav/nav-default/index.js",
+                "test": false,
+                "name": "index.js"
+            },
+            {
+                "relativePath": "src/nav/nav-default/nav-default.js",
+                "test": false,
+                "name": "nav-default.js"
+            }
+        ],
+        "mainFile": "src/nav/nav-default/index.js",
+        "trackDir": "src/nav/nav-default",
+        "origin": "AUTHORED",
+        "exported": true
+    },
+    "mcmanus68.ui-react/section-headline@1.0.19": {
         "files": [
             {
                 "relativePath": "src/sections/section-headline/index.js",
@@ -245,7 +240,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "mcmanus68.ui-react/section-hero@1.0.26": {
+    "mcmanus68.ui-react/section-hero@1.0.38": {
         "files": [
             {
                 "relativePath": "src/sections/section-hero/index.js",
@@ -268,7 +263,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "mcmanus68.ui-react/section-parallax@1.0.4": {
+    "mcmanus68.ui-react/section-parallax@1.0.7": {
         "files": [
             {
                 "relativePath": "src/sections/section-parallax/index.js",

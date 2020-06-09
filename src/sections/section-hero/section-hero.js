@@ -1,17 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
 import { navigate } from 'gatsby'
-
 import { Container } from 'react-bootstrap'
-
 import SectionParallax from '@bit/mcmanus68.ui-react.section-parallax'
 import Button from '@bit/mcmanus68.ui-react.button'
 import Headline from '@bit/mcmanus68.ui-react.headline'
 import HeadlineSeparator from '@bit/mcmanus68.ui-react.headline-separator'
-
 import { fadeUp, scale, grow, spin, fadeDown } from './keyframes'
-
 import styled from 'styled-components'
 
 const Hero = styled.div`
@@ -20,11 +15,10 @@ const Hero = styled.div`
   display: flex;
   align-items: center;
   text-align: center;
-
+  color: #fff;
   h1 {
     animation: ${scale} 0.5s forwards;
   }
-
   h2 {
     opacity: 0;
     animation: ${fadeUp} 0.5s forwards;
@@ -40,7 +34,7 @@ const Line = styled.div`
   width: 100%;
   max-width: 8.4rem;
   height: 2px;
-  background-color: ${props => props.theme.colors.fontLight};
+  background-color: currentColor;
   position: relative;
   opacity: 0;
   animation: ${grow} 2s forwards;
@@ -59,25 +53,24 @@ const Line = styled.div`
 `
 const LineLeft = styled(Line)`
   &:before {
-    border-left-color: ${props => props.theme.colors.fontLight};
+    border-left-color: currentColor;
     left: 0;
   }
 `
 const LineRight = styled(Line)`
   &:before {
-    border-right-color: ${props => props.theme.colors.fontLight};
+    border-right-color: currentColor;
     left: 0;
   }
 `
 const Separator = styled(HeadlineSeparator)`
-  color: ${props => props.theme.colors.primary};
+  color: ${props => props.theme.color.primary};
   margin: 0 0.4rem;
   opacity: 0;
   animation: ${spin} 0.5s forwards;
   animation-delay: 0.7s;
 `
 const Description = styled.h5`
-  color: ${props => props.theme.colors.fontLight};
   font-size: 0.9rem;
   font-weight: 100;
   text-transform: uppercase;
@@ -121,7 +114,7 @@ export default SectionHero
 SectionHero.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
-  image: PropTypes.string,
+  image: PropTypes.object,
   overlay: PropTypes.string,
 }
 

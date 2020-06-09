@@ -1,10 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
 import Content from '@bit/mcmanus68.ui-react.content'
-
 import { FaEnvelope } from 'react-icons/fa'
-
 import styled from 'styled-components'
 
 const Description = styled.h4`
@@ -28,7 +25,7 @@ const Send = styled.button`
   background-color: transparent;
   border: none;
   cursor: pointer;
-  color: ${props => props.theme.colors.primary};
+  color: ${props => props.theme.color.primary};
   font-size: 1.6rem;
   padding: 1px 0.6rem;
   position: absolute;

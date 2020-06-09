@@ -1,11 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
 import { LoremIpsum } from 'react-lorem-ipsum'
-
 import Content from '@bit/mcmanus68.ui-react.content'
 import HeadlineSeparator from '@bit/mcmanus68.ui-react.headline-separator'
-
 import styled from 'styled-components'
 
 const Description = styled.h4`

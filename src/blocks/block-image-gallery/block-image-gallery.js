@@ -1,8 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
-import Image from '@bit/mcmanus68.ui-react.image'
-
+import Img from 'gatsby-image'
 import styled from 'styled-components'
 
 const StyledBlockImageGallery = styled.div`
@@ -38,7 +36,7 @@ const BlockImageGallery = ({ images, display }) => {
   return (
     <StyledBlockImageGallery rows={rows} columns={columns}>
       {images.map((image, i) => (
-        <Image src={image} key={i} />
+        <Img key={i} fluid={image} Tag='div' />
       ))}
     </StyledBlockImageGallery>
   )

@@ -1,9 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
-import { useSelector } from 'react-redux'
 import { Parallax } from 'react-parallax'
-
 import styled from 'styled-components'
 
 const StyledParallax = styled(Parallax)`
@@ -23,11 +20,10 @@ const SectionParallax = ({
   height,
   overlay,
 }) => {
-  const bg = useSelector(state => state.image.images).get(image)
   return (
     <section id={id} className={className}>
       <StyledParallax
-        bgImage={bg.src}
+        bgImage={image.src}
         strength={300}
         bgImageStyle={{
           objectFit: 'cover',
@@ -47,7 +43,7 @@ SectionParallax.propTypes = {
   id: PropTypes.string,
   children: PropTypes.node,
   className: PropTypes.string,
-  image: PropTypes.string.isRequired,
+  image: PropTypes.object.isRequired,
   height: PropTypes.number,
 }
 

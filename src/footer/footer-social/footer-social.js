@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
 import Content from '@bit/mcmanus68.ui-react.content'
 
 import {
@@ -30,12 +29,12 @@ const SocialIcon = styled.a`
   svg {
     width: 1.6rem;
     height: 1.6rem;
-    color: ${props => props.theme.colors.fontLight};
+    color: ${props => props.theme.footer.color};
     opacity: 0.5;
     transition: color 0.5s;
     &:hover,
     &:focus {
-      color: ${props => props.theme.colors.primary};
+      color: ${props => props.theme.color.primary};
     }
   }
 `

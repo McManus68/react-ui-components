@@ -1,8 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
 import { Container } from 'react-bootstrap'
-
 import Content from '@bit/mcmanus68.ui-react.content'
 import SectionParallax from '@bit/mcmanus68.ui-react.section-parallax'
 import Headline from '@bit/mcmanus68.ui-react.headline'

@@ -1,29 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
 import styled from 'styled-components'
-
-const handleColor = (props, color) => {
-  switch (color) {
-    case 'primary':
-      return props.theme.colors.primary
-    case 'secondary':
-      return props.theme.colors.secondary
-    case 'light':
-      return props.theme.colors.fontLight
-    case 'dark':
-      return props.theme.colors.fontDark
-    default:
-      return props.theme.colors.fontLight
-  }
-}
 
 const StyledHeadline = styled.div`
   text-align: center;
 `
 const Title = styled.h1`
-  color: ${props => handleColor(props, props.color)};
-  font-family: ${props => props.theme.fonts.primary};
+  color: currentColor;
+  font-family: ${props => props.theme.font.primary};
   font-size: 3.1rem;
   text-transform: uppercase;
   font-weight: 900;
@@ -31,8 +15,11 @@ const Title = styled.h1`
   margin-right: -5px;
 `
 const SubTitle = styled.h2`
-  color: ${props => handleColor(props, props.color)};
-  font-family: ${props => props.theme.fonts.secondary};
+  color: ${props =>
+    props.color === 'primary'
+      ? props.theme.color.primary
+      : props.theme.color.secondary};
+  font-family: ${props => props.theme.font.secondary};
   font-size: 4.2rem;
   font-weight: 600;
   line-height: 0.4;
@@ -43,11 +30,11 @@ const SubTitle = styled.h2`
   }
 `
 
-const Headline = ({ title, subtitle, titleColor, subtitleColor }) => {
+const Headline = ({ title, subtitle, color }) => {
   return (
     <StyledHeadline>
-      <SubTitle color={subtitleColor}>{subtitle}</SubTitle>
-      <Title color={titleColor}>{title}</Title>
+      <SubTitle color={color}>{subtitle}</SubTitle>
+      <Title>{title}</Title>
     </StyledHeadline>
   )
 }
@@ -57,11 +44,9 @@ export default Headline
 Headline.propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
-  titleColor: PropTypes.string,
-  subtitleColor: PropTypes.string,
+  color: PropTypes.oneOf(['primary', 'secondary']),
 }
 
 Headline.defaultProps = {
-  titleColor: 'light',
-  subtitleColor: 'primary',
+  color: 'primary',
 }
