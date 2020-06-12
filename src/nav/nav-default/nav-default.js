@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+import Img from 'gatsby-image'
 import { Link } from 'gatsby'
 import styled, { keyframes, css } from 'styled-components'
 
@@ -13,18 +14,15 @@ const navItemFade = keyframes`
     transform: translateX(0px);
   }
 `
-
 const StyledNav = styled.nav`
   display: flex;
   justify-content: space-around;
   align-items: center;
   min-height: 8vh;
 `
-
 const Logo = styled.a`
-  color: white;
+  width: 70px;
 `
-
 const NavItems = styled.ul`
   display: flex;
   justify-content: space-around;
@@ -46,7 +44,6 @@ const NavItems = styled.ul`
     transition: transform 0.5s ease-in;
   }
 `
-
 const NavItem = styled.li`
   color: ${props => props.theme.header.color};
   list-style: none;
@@ -59,7 +56,6 @@ const NavItem = styled.li`
         : ''};
   }
 `
-
 const StyledLink = styled(Link)`
   color: ${props => props.theme.header.color};
   text-decoration: none;
@@ -72,7 +68,6 @@ const StyledLink = styled(Link)`
     color: ${props => props.theme.color.primary};
   }
 `
-
 const Burger = styled.div`
   display: none;
   cursor: pointer;
@@ -80,7 +75,6 @@ const Burger = styled.div`
     display: block;
   }
 `
-
 const Line = styled.div`
   width: 25px;
   height: 2px;
@@ -91,7 +85,6 @@ const Line = styled.div`
     background-color: ${props => props.theme.color.primary};
   }
 `
-
 const Line1 = styled(Line)`
   transform: ${props =>
     props.open ? 'rotate(-45deg) translate(-5px, 5px)' : ''};
@@ -110,7 +103,9 @@ const Nav = ({ site }) => {
 
   return (
     <StyledNav>
-      <Logo href='index.html'>{site.name}</Logo>
+      <Logo href='/'>
+        <Img fluid={site.logo} />
+      </Logo>
       <NavItems open={open}>
         {site.pages.map((page, i) => {
           return (

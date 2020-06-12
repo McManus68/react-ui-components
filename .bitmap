@@ -37,7 +37,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "mcmanus68.ui-react/block-simple-content@1.0.35": {
+    "mcmanus68.ui-react/block-simple-content@1.0.36": {
         "files": [
             {
                 "relativePath": "src/blocks/block-simple-content/block-simple-content.js",
@@ -109,7 +109,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "mcmanus68.ui-react/footer-simple-content@1.0.35": {
+    "mcmanus68.ui-react/footer-simple-content@1.0.36": {
         "files": [
             {
                 "relativePath": "src/footer/footer-simple-content/footer-simple-content.js",
@@ -145,7 +145,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "mcmanus68.ui-react/headline-separator@1.0.9": {
+    "mcmanus68.ui-react/headline-separator@1.0.10": {
         "files": [
             {
                 "relativePath": "src/components/headline-separator/headline-separator.js",
@@ -204,7 +204,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "mcmanus68.ui-react/nav-default@1.0.1": {
+    "mcmanus68.ui-react/nav-default@1.0.4": {
         "files": [
             {
                 "relativePath": "src/nav/nav-default/index.js",
@@ -240,7 +240,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "mcmanus68.ui-react/section-hero@1.0.38": {
+    "mcmanus68.ui-react/section-hero@1.0.39": {
         "files": [
             {
                 "relativePath": "src/sections/section-hero/index.js",
