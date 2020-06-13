@@ -22,7 +22,7 @@ SectionHeadline.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
   className: PropTypes.string,
-  image: PropTypes.string.isRequired,
+  image: PropTypes.object.isRequired,
   height: PropTypes.number,
   overlay: PropTypes.string,
 }

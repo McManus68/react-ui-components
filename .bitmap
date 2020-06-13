@@ -222,7 +222,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "mcmanus68.ui-react/section-headline@1.0.19": {
+    "mcmanus68.ui-react/section-headline@1.0.20": {
         "files": [
             {
                 "relativePath": "src/sections/section-headline/index.js",
