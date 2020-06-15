@@ -1,20 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
 import styled from 'styled-components'
 
-const StyledSection = styled.section`
+const StyledSectionCustom = styled.section`
   padding: ${props => props.theme.section.padding};
   overflow: hidden;
 `
 
-const Section = ({ children, id }) => {
-  return <StyledSection id={id}>{children}</StyledSection>
+const SectionCustom = ({ children, id }) => {
+  return <StyledSectionCustom id={id}>{children}</StyledSectionCustom>
 }
 
-export default Section
+export default SectionCustom
 
-Section.propTypes = {
+SectionCustom.propTypes = {
   children: PropTypes.node.isRequired,
   id: PropTypes.string,
 }

@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Container } from 'react-bootstrap'
-import Content from '@bit/mcmanus68.ui-react.content'
-import SectionParallax from '@bit/mcmanus68.ui-react.section-parallax'
-import Headline from '@bit/mcmanus68.ui-react.headline'
+import Content from '@bit/mcmanus68.webmaker.ui.content'
+import Headline from '@bit/mcmanus68.webmaker.ui.headline'
+import SectionParallax from '@bit/mcmanus68.webmaker.section.section-parallax'
 
 const SectionHeadline = ({ id, title, subtitle, image, height, overlay }) => (
   <SectionParallax id={id} image={image} height={height} overlay={overlay}>

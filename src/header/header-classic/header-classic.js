@@ -97,7 +97,7 @@ const Line3 = styled(Line)`
     props.open ? 'rotate(45deg) translate(-5px, -5px)' : ''};
 `
 
-const Nav = ({ site }) => {
+const HeaderClassic = ({ site }) => {
   const [open, setOpen] = useState(false)
   const [item, setItem] = useState('')
 
@@ -126,8 +126,8 @@ const Nav = ({ site }) => {
   )
 }
 
-export default Nav
+export default HeaderClassic
 
-Nav.propTypes = {
+HeaderClassic.propTypes = {
   site: PropTypes.object.isRequired,
 }

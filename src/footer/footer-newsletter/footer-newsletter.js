@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Content from '@bit/mcmanus68.ui-react.content'
+import Content from '@bit/mcmanus68.webmaker.ui.content'
 import { FaEnvelope } from 'react-icons/fa'
 import styled from 'styled-components'
 
