@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Img from 'gatsby-image'
+import Image from '@bit/mcmanus68.webmaker.ui.image'
 import styled from 'styled-components'
 
 const StyledBlockImageGallery = styled.div`
@@ -36,7 +36,7 @@ const BlockImageGallery = ({ images, display }) => {
   return (
     <StyledBlockImageGallery rows={rows} columns={columns}>
       {images.map((image, i) => (
-        <Img key={i} fluid={image} Tag='div' />
+        <Image key={i} image={image} />
       ))}
     </StyledBlockImageGallery>
   )
