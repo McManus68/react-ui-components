@@ -16,7 +16,6 @@ const StyledBlockImageGallery = styled.div`
 const BlockImageGallery = ({ images, display }) => {
   let columns = -1
   let rows = -1
-
   switch (display) {
     case 'Square': {
       columns = Math.ceil(Math.sqrt(images.length))
