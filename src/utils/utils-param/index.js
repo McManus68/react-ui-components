@@ -1,1 +1,3 @@
-export { default } from './utils-param.tsx'
+import { reduceParams } from './utils-param'
+
+export { reduceParams }

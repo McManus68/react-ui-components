@@ -1,7 +1,7 @@
 import React from 'react'
 import { Col } from 'react-bootstrap'
 import { Block, BlockType, AnimationType } from '@bit/mcmanus68.webmaker.types.types'
-import reduceParams from '@bit/mcmanus68.webmaker.utils.utils-param'
+import { reduceParams } from '@bit/mcmanus68.webmaker.utils.utils-param'
 import BlockImageGallery from '@bit/mcmanus68.webmaker.block.block-image-gallery'
 import BlockSimpleContent from '@bit/mcmanus68.webmaker.block.block-simple-content'
 import FactoryAnimation from '@bit/mcmanus68.webmaker.factory.factory-animation'

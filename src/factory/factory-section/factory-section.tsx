@@ -1,7 +1,7 @@
 import React from 'react'
 import { Section, Row, SectionType } from '@bit/mcmanus68.webmaker.types.types'
 import { Container } from 'react-bootstrap'
-import reduceParams from '@bit/mcmanus68.webmaker.utils.utils-param'
+import { reduceParams } from '@bit/mcmanus68.webmaker.utils.utils-param'
 import RowFactory from '@bit/mcmanus68.webmaker.factory.factory-row'
 import SectionCustom from '@bit/mcmanus68.webmaker.section.section-custom'
 import SectionHeadline from '@bit/mcmanus68.webmaker.section.section-headline'
@@ -24,9 +24,7 @@ const FactorySection: React.FC<Props> = ({ section, recursive, children }) => {
         <SectionCustom>
           <Container>
             {recursive
-              ? section.rows.map((row: Row, i: number) => (
-                  <RowFactory key={i} row={row} />
-                ))
+              ? section.rows.map((row: Row, i: number) => <RowFactory key={i} row={row} />)
               : children}
           </Container>
         </SectionCustom>

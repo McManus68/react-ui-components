@@ -19,7 +19,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "mcmanus68.webmaker/block/block-simple-content@1.0.4": {
+    "mcmanus68.webmaker/block/block-simple-content@1.0.5": {
         "files": [
             {
                 "relativePath": "src/block/block-simple-content/block-simple-content.tsx",
@@ -55,7 +55,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "mcmanus68.webmaker/factory/factory-block@1.0.7": {
+    "mcmanus68.webmaker/factory/factory-block@1.0.10": {
         "files": [
             {
                 "relativePath": "src/factory/factory-block/factory-block.tsx",
@@ -73,7 +73,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "mcmanus68.webmaker/factory/factory-footer@1.0.7": {
+    "mcmanus68.webmaker/factory/factory-footer@1.0.10": {
         "files": [
             {
                 "relativePath": "src/factory/factory-footer/factory-footer.tsx",
@@ -109,7 +109,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "mcmanus68.webmaker/factory/factory-page@1.0.10": {
+    "mcmanus68.webmaker/factory/factory-page@1.0.13": {
         "files": [
             {
                 "relativePath": "src/factory/factory-page/factory-page.tsx",
@@ -127,7 +127,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "mcmanus68.webmaker/factory/factory-row@1.0.7": {
+    "mcmanus68.webmaker/factory/factory-row@1.0.10": {
         "files": [
             {
                 "relativePath": "src/factory/factory-row/factory-row.tsx",
@@ -145,7 +145,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "mcmanus68.webmaker/factory/factory-section@1.0.10": {
+    "mcmanus68.webmaker/factory/factory-section@1.0.13": {
         "files": [
             {
                 "relativePath": "src/factory/factory-section/factory-section.tsx",
@@ -160,6 +160,24 @@
         ],
         "mainFile": "src/factory/factory-section/index.js",
         "trackDir": "src/factory/factory-section",
+        "origin": "AUTHORED",
+        "exported": true
+    },
+    "mcmanus68.webmaker/factory/factory-theme@1.0.3": {
+        "files": [
+            {
+                "relativePath": "src/factory/factory-theme/factory-theme.ts",
+                "test": false,
+                "name": "factory-theme.ts"
+            },
+            {
+                "relativePath": "src/factory/factory-theme/index.js",
+                "test": false,
+                "name": "index.js"
+            }
+        ],
+        "mainFile": "src/factory/factory-theme/index.js",
+        "trackDir": "src/factory/factory-theme",
         "origin": "AUTHORED",
         "exported": true
     },
@@ -456,7 +474,25 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "mcmanus68.webmaker/utils/utils-param@1.0.2": {
+    "mcmanus68.webmaker/utils/utils-color@1.0.2": {
+        "files": [
+            {
+                "relativePath": "src/utils/utils-color/index.js",
+                "test": false,
+                "name": "index.js"
+            },
+            {
+                "relativePath": "src/utils/utils-color/utils-color.ts",
+                "test": false,
+                "name": "utils-color.ts"
+            }
+        ],
+        "mainFile": "src/utils/utils-color/index.js",
+        "trackDir": "src/utils/utils-color",
+        "origin": "AUTHORED",
+        "exported": true
+    },
+    "mcmanus68.webmaker/utils/utils-param@1.0.4": {
         "files": [
             {
                 "relativePath": "src/utils/utils-param/index.js",
@@ -464,9 +500,9 @@
                 "name": "index.js"
             },
             {
-                "relativePath": "src/utils/utils-param/utils-param.tsx",
+                "relativePath": "src/utils/utils-param/utils-param.ts",
                 "test": false,
-                "name": "utils-param.tsx"
+                "name": "utils-param.ts"
             }
         ],
         "mainFile": "src/utils/utils-param/index.js",
