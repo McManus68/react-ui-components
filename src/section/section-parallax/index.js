@@ -1,1 +1,1 @@
-export { default } from './section-parallax.js'
+export { default } from './section-parallax.tsx'

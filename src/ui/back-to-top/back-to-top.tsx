@@ -1,9 +1,6 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import scrollTo from 'gatsby-plugin-smoothscroll'
-
 import { FaChevronUp } from 'react-icons/fa'
-
 import styled from 'styled-components'
 
 const StyledBackToTop = styled.div`
@@ -25,8 +22,11 @@ const StyledLink = styled.a`
     margin: 1.2rem;
   }
 `
+interface Props {
+  anchor: string
+}
 
-const BackToTop = ({ anchor }) => {
+const BackToTop: React.FC<Props> = ({ anchor = 'hero' }) => {
   return (
     <StyledBackToTop>
       <StyledLink onClick={() => scrollTo('#' + anchor)}>
@@ -37,11 +37,3 @@ const BackToTop = ({ anchor }) => {
 }
 
 export default BackToTop
-
-BackToTop.propTypes = {
-  anchor: PropTypes.string,
-}
-
-BackToTop.defaultProps = {
-  anchor: 'hero',
-}

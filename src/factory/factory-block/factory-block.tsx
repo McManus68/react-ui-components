@@ -1,10 +1,6 @@
 import React from 'react'
 import { Col } from 'react-bootstrap'
-import {
-  Block,
-  BlockType,
-  AnimationType,
-} from '@bit/mcmanus68.webmaker.types.types'
+import { Block, BlockType, AnimationType } from '@bit/mcmanus68.webmaker.types.types'
 import reduceParams from '@bit/mcmanus68.webmaker.utils.utils-param'
 import BlockImageGallery from '@bit/mcmanus68.webmaker.block.block-image-gallery'
 import BlockSimpleContent from '@bit/mcmanus68.webmaker.block.block-simple-content'
@@ -37,9 +33,7 @@ const FactoryBlock: React.FC<Props> = ({ block }) => {
   })()
 
   if (block.animation.type !== AnimationType.None) {
-    content = (
-      <FactoryAnimation animation={block.animation}>{content}</FactoryAnimation>
-    )
+    content = <FactoryAnimation animation={block.animation}>{content}</FactoryAnimation>
   }
   return (
     <Col className={`${block.classes} my-auto`} {...block.responsive}>

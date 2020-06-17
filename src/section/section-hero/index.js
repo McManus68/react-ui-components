@@ -1,1 +1,1 @@
-export { default } from './section-hero.js'
+export { default } from './section-hero.tsx'

@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const StyledHeadline = styled.div`
@@ -16,9 +15,7 @@ const Title = styled.h1`
 `
 const SubTitle = styled.h2`
   color: ${props =>
-    props.color === 'primary'
-      ? props.theme.color.primary
-      : props.theme.color.secondary};
+    props.color === 'primary' ? props.theme.color.primary : props.theme.color.secondary};
   font-family: ${props => props.theme.font.secondary};
   font-size: 4.2rem;
   font-weight: 600;
@@ -29,8 +26,13 @@ const SubTitle = styled.h2`
     font-size: 5rem;
   }
 `
+interface Props {
+  title: string
+  subtitle: string
+  color: 'primary' | 'secondary'
+}
 
-const Headline = ({ title, subtitle, color }) => {
+const Headline: React.FC<Props> = ({ title, subtitle, color = 'primary' }) => {
   return (
     <StyledHeadline>
       <SubTitle color={color}>{subtitle}</SubTitle>
@@ -40,13 +42,3 @@ const Headline = ({ title, subtitle, color }) => {
 }
 
 export default Headline
-
-Headline.propTypes = {
-  title: PropTypes.string.isRequired,
-  subtitle: PropTypes.string.isRequired,
-  color: PropTypes.oneOf(['primary', 'secondary']),
-}
-
-Headline.defaultProps = {
-  color: 'primary',
-}

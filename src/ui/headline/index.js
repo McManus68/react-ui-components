@@ -1,1 +1,1 @@
-export { default } from './headline.js'
+export { default } from './headline.tsx'

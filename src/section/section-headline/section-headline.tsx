@@ -1,11 +1,26 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { Container } from 'react-bootstrap'
 import Content from '@bit/mcmanus68.webmaker.ui.content'
 import Headline from '@bit/mcmanus68.webmaker.ui.headline'
 import SectionParallax from '@bit/mcmanus68.webmaker.section.section-parallax'
 
-const SectionHeadline = ({ id, title, subtitle, image, height, overlay }) => (
+interface Props {
+  id?: string
+  title?: string
+  subtitle?: string
+  image: any
+  height: number
+  overlay: string
+}
+
+const SectionHeadline: React.FC<Props> = ({
+  id,
+  title,
+  subtitle,
+  image,
+  height = 65,
+  overlay = 'none',
+}) => (
   <SectionParallax id={id} image={image} height={height} overlay={overlay}>
     <Container>
       <Content>
@@ -16,19 +31,3 @@ const SectionHeadline = ({ id, title, subtitle, image, height, overlay }) => (
 )
 
 export default SectionHeadline
-
-SectionHeadline.propTypes = {
-  id: PropTypes.string,
-  title: PropTypes.string,
-  subtitle: PropTypes.string,
-  className: PropTypes.string,
-  image: PropTypes.object.isRequired,
-  height: PropTypes.number,
-  overlay: PropTypes.string,
-}
-
-SectionHeadline.defaultProps = {
-  className: '',
-  height: 65,
-  overlay: 'none',
-}

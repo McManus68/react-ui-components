@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import PropTypes from 'prop-types'
-import Img from 'gatsby-image'
+import { Site, Page } from '@bit/mcmanus68.webmaker.types.types'
+import Image from '@bit/mcmanus68.webmaker.ui.image'
 import { Link } from 'gatsby'
 import styled, { keyframes, css } from 'styled-components'
 
@@ -23,7 +23,12 @@ const StyledNav = styled.nav`
 const Logo = styled.a`
   width: 70px;
 `
-const NavItems = styled.ul`
+
+interface OpenableProps {
+  open: boolean
+}
+
+const NavItems = styled.ul<OpenableProps>`
   display: flex;
   justify-content: space-around;
   width: 40%;
@@ -44,16 +49,20 @@ const NavItems = styled.ul`
     transition: transform 0.5s ease-in;
   }
 `
-const NavItem = styled.li`
+
+interface ItemProps {
+  open: boolean
+  delay: number
+}
+
+const NavItem = styled.li<ItemProps>`
   color: ${props => props.theme.header.color};
   list-style: none;
   cursor: pointer;
   @media (max-width: ${props => props.theme.breakpoint.md}) {
     opacity: 0;
     animation: ${props =>
-      props.open
-        ? css`${navItemFade} 0.5s ease forwards ${props.delay / 5 + 0.4}s;`
-        : ''};
+      props.open ? css`${navItemFade} 0.5s ease forwards ${props.delay / 5 + 0.4}s;` : ''};
   }
 `
 const StyledLink = styled(Link)`
@@ -75,7 +84,7 @@ const Burger = styled.div`
     display: block;
   }
 `
-const Line = styled.div`
+const Line = styled.div<OpenableProps>`
   width: 25px;
   height: 2px;
   background-color: rgb(226, 226, 226);
@@ -86,28 +95,30 @@ const Line = styled.div`
   }
 `
 const Line1 = styled(Line)`
-  transform: ${props =>
-    props.open ? 'rotate(-45deg) translate(-5px, 5px)' : ''};
+  transform: ${props => (props.open ? 'rotate(-45deg) translate(-5px, 5px)' : '')};
 `
 const Line2 = styled(Line)`
   opacity: ${props => (props.open ? '0' : '1')};
 `
 const Line3 = styled(Line)`
-  transform: ${props =>
-    props.open ? 'rotate(45deg) translate(-5px, -5px)' : ''};
+  transform: ${props => (props.open ? 'rotate(45deg) translate(-5px, -5px)' : '')};
 `
 
-const HeaderClassic = ({ site }) => {
+interface Props {
+  site: Site
+}
+
+const HeaderClassic: React.FC<Props> = ({ site }) => {
   const [open, setOpen] = useState(false)
   const [item, setItem] = useState('')
 
   return (
     <StyledNav>
       <Logo href='/'>
-        <Img fluid={site.logo} />
+        <Image image={site.logo} />
       </Logo>
       <NavItems open={open}>
-        {site.pages.map((page, i) => {
+        {site.pages.map((page: Page, i: number) => {
           return (
             <NavItem key={i} open={open} delay={i}>
               <StyledLink to={page.slug} onClick={() => setItem(page.name)}>
@@ -127,7 +138,3 @@ const HeaderClassic = ({ site }) => {
 }
 
 export default HeaderClassic
-
-HeaderClassic.propTypes = {
-  site: PropTypes.object.isRequired,
-}

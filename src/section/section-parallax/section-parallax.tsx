@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { useSelector } from 'react-redux'
 import { Parallax } from 'react-parallax'
 import styled from 'styled-components'
@@ -7,21 +6,38 @@ import styled from 'styled-components'
 const StyledParallax = styled(Parallax)`
   width: 100%;
 `
-const Overlay = styled.div`
+
+interface OverlayProps {
+  height: number
+  overlay: string
+}
+
+const Overlay = styled.div<OverlayProps>`
   display: flex;
   align-items: center;
   height: ${props => props.height}vh;
   background-color: ${props => props.overlay};
 `
-const SectionParallax = ({
+
+interface Props {
+  id?: string
+  className?: string
+  title?: string
+  subtitle?: string
+  image: any
+  height: number
+  overlay: string
+}
+
+const SectionParallax: React.FC<Props> = ({
   id,
   className,
   children,
   image,
-  height,
-  overlay,
+  height = 100,
+  overlay = 'none',
 }) => {
-  const context = useSelector(state => state.context)
+  const context = useSelector((state: { context: any }) => state.context)
 
   return (
     <section id={id} className={className}>
@@ -41,17 +57,3 @@ const SectionParallax = ({
 }
 
 export default SectionParallax
-
-SectionParallax.propTypes = {
-  id: PropTypes.string,
-  children: PropTypes.node,
-  className: PropTypes.string,
-  image: PropTypes.object.isRequired,
-  height: PropTypes.number,
-}
-
-SectionParallax.defaultProps = {
-  className: '',
-  overlay: 'none',
-  height: 100,
-}

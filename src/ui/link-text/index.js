@@ -1,1 +1,1 @@
-export { default } from './link-text.js'
+export { default } from './link-text.tsx'

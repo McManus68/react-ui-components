@@ -1,1 +1,1 @@
-export { default } from './headline-separator.js'
+export { default } from './headline-separator.tsx'

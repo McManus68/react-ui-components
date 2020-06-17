@@ -1,1 +1,1 @@
-export { default } from './section-headline.js'
+export { default } from './section-headline.tsx'

@@ -1,1 +1,1 @@
-export { default } from './header-classic.js'
+export { default } from './header-classic.tsx'

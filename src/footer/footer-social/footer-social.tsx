@@ -1,21 +1,13 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Content from '@bit/mcmanus68.webmaker.ui.content'
-
-import {
-  FaTwitter,
-  FaFacebook,
-  FaPinterest,
-  FaLinkedinIn,
-  FaTripadvisor,
-} from 'react-icons/fa'
-
+import { FaTwitter, FaFacebook, FaPinterest, FaLinkedinIn, FaTripadvisor } from 'react-icons/fa'
 import styled from 'styled-components'
 
 const Description = styled.h4`
   font-size: 1.2rem;
   text-transform: uppercase;
   font-weight: 100;
+
   letter-spacing: 3px;
 `
 const SocialList = styled.ul`
@@ -38,8 +30,11 @@ const SocialIcon = styled.a`
     }
   }
 `
+interface Props {
+  title: string
+}
 
-const FooterSocial = ({ title }) => {
+const FooterSocial: React.FC<Props> = ({ title = 'Follow along' }) => {
   return (
     <Content>
       <Description>{title}</Description>
@@ -75,11 +70,3 @@ const FooterSocial = ({ title }) => {
 }
 
 export default FooterSocial
-
-FooterSocial.propTypes = {
-  title: PropTypes.string,
-}
-
-FooterSocial.defaultProps = {
-  title: 'Follow along',
-}

@@ -1,11 +1,14 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-
 import { Link } from 'gatsby'
-
 import styled from 'styled-components'
 
-const LinkText = ({ color, className, children, to }) => (
+interface Props {
+  color: 'primary' | 'secondary'
+  className?: string
+  to: string
+}
+
+const LinkText: React.FC<Props> = ({ color = 'primary', className, children, to }) => (
   <Link to={'/' + to} className={className}>
     {children}
   </Link>
@@ -43,14 +46,4 @@ const StyledLinkText = styled(LinkText)`
     background-color: ${props => props.theme.color.primaryDark};
   }
 `
-
 export default StyledLinkText
-
-LinkText.propTypes = {
-  children: PropTypes.string,
-  color: PropTypes.oneOf(['primary', 'secondary']),
-}
-
-LinkText.defaultProps = {
-  color: 'primary',
-}

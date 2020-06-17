@@ -1,6 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-
 import styled from 'styled-components'
 
 const StyledContent = styled.div`
@@ -11,12 +9,8 @@ const StyledContent = styled.div`
     margin-bottom: ${props => props.theme.block.spacing};
   }
 `
-const Content = ({ children }) => {
+const Content: React.FC = ({ children }) => {
   return <StyledContent>{children}</StyledContent>
 }
 
 export default Content
-
-Content.propTypes = {
-  children: PropTypes.node.isRequired,
-}

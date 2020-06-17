@@ -1,6 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-
 import styled from 'styled-components'
 
 const StyledButton = styled.button`
@@ -11,9 +9,7 @@ const StyledButton = styled.button`
   letter-spacing: 2px;
   margin-right: -2px;
   background-color: ${props =>
-    props.color === 'primary'
-      ? props.theme.color.primary
-      : props.theme.color.secondary};
+    props.color === 'primary' ? props.theme.color.primary : props.theme.color.secondary};
   padding: 8px 16px;
   color: currentColor;
   border-radius: 3px;
@@ -22,13 +18,15 @@ const StyledButton = styled.button`
   &:focus,
   &:hover {
     background-color: ${props =>
-      props.color === 'primary'
-        ? props.theme.color.primaryDark
-        : props.theme.color.secondaryDark};
+      props.color === 'primary' ? props.theme.color.primaryDark : props.theme.color.secondaryDark};
   }
 `
 
-const Button = ({ children, color, ...otherProps }) => {
+interface Props {
+  color: 'primary' | 'secondary'
+}
+
+const Button: React.FC<Props> = ({ color = 'primary', children, ...otherProps }) => {
   return (
     <StyledButton color={color} {...otherProps}>
       {children}
@@ -37,12 +35,3 @@ const Button = ({ children, color, ...otherProps }) => {
 }
 
 export default Button
-
-Button.propTypes = {
-  children: PropTypes.node,
-  color: PropTypes.oneOf(['primary', 'secondary']),
-}
-
-Button.defaultProps = {
-  color: 'primary',
-}

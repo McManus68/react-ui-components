@@ -1,1 +1,1 @@
-export { default } from './block-image-gallery.js'
+export { default } from './block-image-gallery.tsx'

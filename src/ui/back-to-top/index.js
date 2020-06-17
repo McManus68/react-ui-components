@@ -1,1 +1,1 @@
-export { default } from './back-to-top.js'
+export { default } from './back-to-top.tsx'

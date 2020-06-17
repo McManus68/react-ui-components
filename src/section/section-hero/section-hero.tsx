@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { navigate } from 'gatsby'
 import { Container } from 'react-bootstrap'
 import SectionParallax from '@bit/mcmanus68.webmaker.section.section-parallax'
@@ -84,7 +83,14 @@ const AnimationContainer = styled.div`
   animation-delay: 1.5s;
 `
 
-const SectionHero = ({ title, subtitle, image, overlay }) => {
+interface Props {
+  title: string
+  subtitle: string
+  image: any
+  overlay?: string
+}
+
+const SectionHero: React.FC<Props> = ({ title, subtitle, image, overlay = 'none' }) => {
   const goToHome = () => {
     navigate('/')
   }
@@ -110,14 +116,3 @@ const SectionHero = ({ title, subtitle, image, overlay }) => {
 }
 
 export default SectionHero
-
-SectionHero.propTypes = {
-  title: PropTypes.string,
-  subtitle: PropTypes.string,
-  image: PropTypes.object,
-  overlay: PropTypes.string,
-}
-
-SectionHero.defaultProps = {
-  overlay: 'none',
-}

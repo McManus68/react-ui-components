@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { LoremIpsum } from 'react-lorem-ipsum'
 import Content from '@bit/mcmanus68.webmaker.ui.content'
 import HeadlineSeparator from '@bit/mcmanus68.webmaker.ui.headline-separator'
@@ -12,7 +11,11 @@ const Description = styled.h4`
   letter-spacing: 3px;
 `
 
-const FooterSimpleContent = ({ title }) => {
+interface Props {
+  title: string
+}
+
+const FooterSimpleContent: React.FC<Props> = ({ title }) => {
   return (
     <Content>
       <Description>{title}</Description>
@@ -23,11 +26,3 @@ const FooterSimpleContent = ({ title }) => {
 }
 
 export default FooterSimpleContent
-
-FooterSimpleContent.propTypes = {
-  title: PropTypes.string,
-}
-
-FooterSimpleContent.defaultProps = {
-  title: 'About Us',
-}
