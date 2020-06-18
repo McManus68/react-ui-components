@@ -13,22 +13,22 @@ const FactoryBlock = ({ block }) => {
   const params = reduceParams(block.params)
   var content = (() => {
     switch (block.type) {
-      case BlockType.BlockSimpleContent:
+      case 'BLOCK_SIMPLE_CONTENT':
         return <BlockSimpleContent {...params} />
-      case BlockType.BlockGallery:
+      case 'BLOCK_GALLERY':
         return <BlockImageGallery {...params} />
-      case BlockType.FooterSimpleContent:
+      case 'FOOTER_SIMPLE_CONTENT':
         return <FooterSimpleContent {...params} />
-      case BlockType.FooterSocial:
+      case 'FOOTER_SOCIAL':
         return <FooterSocial {...params} />
-      case BlockType.FooterNewsletter:
+      case 'FOOTER_NEWSLETTER':
         return <FooterNewsletter {...params} />
       default:
         return null
     }
   })()
 
-  if (block.animation.type !== AnimationType.None) {
+  if (block.animation.type !== 'NONE') {
     content = <FactoryAnimation animation={block.animation}>{content}</FactoryAnimation>
   }
   return (

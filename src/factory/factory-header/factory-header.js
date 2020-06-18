@@ -16,7 +16,7 @@ const StyledHeader = styled.header`
 const FactoryHeader = ({ site }) => {
   var content = (() => {
     switch (site.header.type) {
-      case HeaderType.HeaderClassic:
+      case 'HEADER_CLASSIC':
         return <HeaderClassic site={site} />
       default:
         return null

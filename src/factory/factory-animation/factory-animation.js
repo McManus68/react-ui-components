@@ -14,27 +14,27 @@ import Zoom from 'react-reveal/Zoom'
 
 const FactoryAnimation = ({ animation, children }) => {
   switch (animation.type) {
-    case AnimationType.Bounce:
+    case 'BOUNCE':
       return <Bounce {...animation}>{children}</Bounce>
-    case AnimationType.Fade:
+    case 'FADE':
       return <Fade {...animation}>{children}</Fade>
-    case AnimationType.Flip:
+    case 'FLIP':
       return <Flip {...animation}>{children}</Flip>
-    case AnimationType.Pulse:
+    case 'PULSE':
       return <Pulse {...animation}>{children}</Pulse>
-    case AnimationType.Reveal:
+    case 'REVEAL':
       return <Reveal {...animation}>{children}</Reveal>
-    case AnimationType.Roll:
+    case 'ROLL':
       return <Roll {...animation}>{children}</Roll>
-    case AnimationType.Rotate:
+    case 'ROTATE':
       return <Rotate {...animation}>{children}</Rotate>
-    case AnimationType.Shake:
+    case 'SHAKE':
       return <Shake {...animation}>{children}</Shake>
-    case AnimationType.Slide:
+    case 'SLIDE':
       return <Slide {...animation}>{children}</Slide>
-    case AnimationType.Spin:
+    case 'SPIN':
       return <Spin {...animation}>{children}</Spin>
-    case AnimationType.Zoom:
+    case 'ZOOM':
       return <Zoom {...animation}>{children}</Zoom>
     default:
       return null

@@ -14,5 +14,5 @@ const SectionCustom = ({ children, id }) => {
 export default SectionCustom
 
 SectionCustom.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
 }

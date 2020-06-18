@@ -10,11 +10,11 @@ import SectionHero from '@bit/mcmanus68.webmaker.section.section-hero'
 const FactorySection = ({ section, recursive, children }) => {
   const params = reduceParams(section.params)
   switch (section.type) {
-    case SectionType.SectionHero:
+    case 'SECTION_HERO':
       return <SectionHero {...params} />
-    case SectionType.SectionHeadline:
+    case 'SECTION_HEADLINE':
       return <SectionHeadline {...params} />
-    case SectionType.SectionCustom:
+    case 'SECTION_CUSTOM':
       return (
         <SectionCustom>
           <Container>
@@ -31,7 +31,7 @@ export default FactorySection
 
 FactorySection.propTypes = {
   section: PropTypes.object.isRequired,
-  recursive: PropTypes.boolean,
+  recursive: PropTypes.bool,
 }
 
 FactorySection.defaultProps = {

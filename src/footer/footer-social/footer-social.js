@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Content from '@bit/mcmanus68.webmaker.ui.content'
 import { FaTwitter, FaFacebook, FaPinterest, FaLinkedinIn, FaTripadvisor } from 'react-icons/fa'
 import styled from 'styled-components'

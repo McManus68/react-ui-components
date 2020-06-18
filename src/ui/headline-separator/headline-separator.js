@@ -12,7 +12,7 @@ const StyledHeadlineSeparator = styled(HeadlineSeparator)`
 export default StyledHeadlineSeparator
 
 StyledHeadlineSeparator.propTypes = {
-  primary: PropTypes.boolean,
+  primary: PropTypes.bool,
   className: PropTypes.string,
 }
 
