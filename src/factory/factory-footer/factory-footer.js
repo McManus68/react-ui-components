@@ -1,6 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Container } from 'react-bootstrap'
-import { Footer, Row } from '@bit/mcmanus68.webmaker.types.types'
 import BackToTop from '@bit/mcmanus68.webmaker.ui.back-to-top'
 import RowFactory from '@bit/mcmanus68.webmaker.factory.factory-row'
 import styled from 'styled-components'
@@ -12,16 +12,12 @@ const StyledFooter = styled.footer`
   position: relative;
 `
 
-interface Props {
-  footer: Footer
-}
-
-const FactoryFooter: React.FC<Props> = ({ footer }) => {
+const FactoryFooter = ({ footer }) => {
   return (
     <StyledFooter>
       <Container>
         <BackToTop />
-        {footer.rows.map((row: Row, i: number) => (
+        {footer.rows.map((row, i) => (
           <RowFactory key={i} row={row} />
         ))}
       </Container>
@@ -30,3 +26,7 @@ const FactoryFooter: React.FC<Props> = ({ footer }) => {
 }
 
 export default FactoryFooter
+
+FactoryFooter.propTypes = {
+  footer: PropTypes.object.isRequired,
+}

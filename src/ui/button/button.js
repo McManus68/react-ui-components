@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const StyledButton = styled.button`
@@ -22,11 +23,7 @@ const StyledButton = styled.button`
   }
 `
 
-interface Props {
-  color: 'primary' | 'secondary'
-}
-
-const Button: React.FC<Props> = ({ color = 'primary', children, ...otherProps }) => {
+const Button = ({ color = 'primary', children, ...otherProps }) => {
   return (
     <StyledButton color={color} {...otherProps}>
       {children}
@@ -35,3 +32,11 @@ const Button: React.FC<Props> = ({ color = 'primary', children, ...otherProps })
 }
 
 export default Button
+
+Button.propTypes = {
+  color: PropTypes.oneOf(['primary', 'secondary']),
+}
+
+Button.defaultProps = {
+  color: 'primary',
+}

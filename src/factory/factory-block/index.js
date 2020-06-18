@@ -1,1 +1,1 @@
-export { default } from './factory-block.tsx'
+export { default } from './factory-block.js'

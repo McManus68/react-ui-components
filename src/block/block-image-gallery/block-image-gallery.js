@@ -1,13 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Image from '@bit/mcmanus68.webmaker.ui.image'
 import styled from 'styled-components'
 
-interface GridProps {
-  columns: number
-  rows: number
-}
-
-const StyledBlockImageGallery = styled.div<GridProps>`
+const StyledBlockImageGallery = styled.div`
   display: grid;
   ${({ columns }) => columns !== -1 && `grid-template-columns: repeat(${columns}, 1fr);`}
   ${({ rows }) => rows !== -1 && `grid-template-rows: repeat(${rows}, 1fr);`}
@@ -15,12 +11,7 @@ const StyledBlockImageGallery = styled.div<GridProps>`
   height: 60vh;
 `
 
-interface Props {
-  images: any[]
-  display: 'Square' | 'Vertical' | 'Horizontal'
-}
-
-const BlockImageGallery: React.FC<Props> = ({ images, display = 'Square' }) => {
+const BlockImageGallery = ({ images, display }) => {
   let columns = -1
   let rows = -1
   switch (display) {
@@ -41,7 +32,7 @@ const BlockImageGallery: React.FC<Props> = ({ images, display = 'Square' }) => {
 
   return (
     <StyledBlockImageGallery rows={rows} columns={columns}>
-      {images.map((image: any, i: number) => (
+      {images.map((image, i) => (
         <Image key={i} image={image} />
       ))}
     </StyledBlockImageGallery>
@@ -49,3 +40,12 @@ const BlockImageGallery: React.FC<Props> = ({ images, display = 'Square' }) => {
 }
 
 export default BlockImageGallery
+
+BlockImageGallery.propTypes = {
+  images: PropTypes.array,
+  display: PropTypes.oneOf(['Square', 'Vertical', 'Horizontal']),
+}
+
+BlockImageGallery.defaultProps = {
+  display: 'Square',
+}

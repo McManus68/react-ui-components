@@ -1,5 +1,5 @@
 import React from 'react'
-import { Animation, AnimationType } from '@bit/mcmanus68.webmaker.types.types'
+import PropTypes from 'prop-types'
 import Bounce from 'react-reveal/Bounce'
 import Fade from 'react-reveal/Fade'
 import Flip from 'react-reveal/Flip'
@@ -12,12 +12,7 @@ import Slide from 'react-reveal/Slide'
 import Spin from 'react-reveal/Spin'
 import Zoom from 'react-reveal/Zoom'
 
-interface Props {
-  animation: Animation
-  children: React.ReactNode
-}
-
-const FactoryAnimation: React.FC<Props> = ({ animation, children }) => {
+const FactoryAnimation = ({ animation, children }) => {
   switch (animation.type) {
     case AnimationType.Bounce:
       return <Bounce {...animation}>{children}</Bounce>
@@ -47,3 +42,7 @@ const FactoryAnimation: React.FC<Props> = ({ animation, children }) => {
 }
 
 export default FactoryAnimation
+
+FactoryAnimation.propTypes = {
+  animation: PropTypes.object.isRequired,
+}

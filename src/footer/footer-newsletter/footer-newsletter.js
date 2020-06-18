@@ -33,7 +33,7 @@ const Send = styled.button`
   margin-left: 10.5rem;
 `
 
-const FooterNewsLetter: React.FC = () => {
+const FooterNewsLetter = () => {
   return (
     <Content>
       <Description>Newsletter</Description>

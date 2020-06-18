@@ -1,1 +1,1 @@
-export { default } from './block-simple-content.tsx'
+export { default } from './block-simple-content.js'

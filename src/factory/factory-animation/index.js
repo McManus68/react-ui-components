@@ -1,1 +1,1 @@
-export { default } from './factory-animation.tsx'
+export { default } from './factory-animation.js'

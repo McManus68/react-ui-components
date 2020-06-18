@@ -9,7 +9,7 @@ const StyledContent = styled.div`
     margin-bottom: ${props => props.theme.block.spacing};
   }
 `
-const Content: React.FC = ({ children }) => {
+const Content = ({ children }) => {
   return <StyledContent>{children}</StyledContent>
 }
 

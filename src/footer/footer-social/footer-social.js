@@ -30,11 +30,8 @@ const SocialIcon = styled.a`
     }
   }
 `
-interface Props {
-  title: string
-}
 
-const FooterSocial: React.FC<Props> = ({ title = 'Follow along' }) => {
+const FooterSocial = ({ title }) => {
   return (
     <Content>
       <Description>{title}</Description>
@@ -70,3 +67,11 @@ const FooterSocial: React.FC<Props> = ({ title = 'Follow along' }) => {
 }
 
 export default FooterSocial
+
+FooterSocial.propTypes = {
+  title: PropTypes.string,
+}
+
+FooterSocial.defaultProps = {
+  title: 'Follow along',
+}

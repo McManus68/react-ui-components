@@ -1,7 +1,6 @@
-import { Theme } from '@bit/mcmanus68.webmaker.types.types'
 import { lightenDarkenColor } from '@bit/mcmanus68.webmaker.utils.utils-color'
 
-export function createTheme(theme: Theme): Theme {
+export function createTheme(theme) {
   var theme = theme ? { ...theme } : defaultTheme()
   theme.color.primaryLight = lightenDarkenColor(theme.color.primary, 20)
   theme.color.primaryDark = lightenDarkenColor(theme.color.primary, -20)
@@ -10,7 +9,7 @@ export function createTheme(theme: Theme): Theme {
   return theme
 }
 
-export function defaultTheme(): Theme {
+export function defaultTheme() {
   return {
     color: {
       primary: '#bd10e0',

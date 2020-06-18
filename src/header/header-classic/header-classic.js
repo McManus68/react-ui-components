@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Site, Page } from '@bit/mcmanus68.webmaker.types.types'
+import PropTypes from 'prop-types'
 import Image from '@bit/mcmanus68.webmaker.ui.image'
 import { Link } from 'gatsby'
 import styled, { keyframes, css } from 'styled-components'
@@ -23,12 +23,7 @@ const StyledNav = styled.nav`
 const Logo = styled.a`
   width: 70px;
 `
-
-interface OpenableProps {
-  open: boolean
-}
-
-const NavItems = styled.ul<OpenableProps>`
+const NavItems = styled.ul`
   display: flex;
   justify-content: space-around;
   width: 40%;
@@ -49,13 +44,7 @@ const NavItems = styled.ul<OpenableProps>`
     transition: transform 0.5s ease-in;
   }
 `
-
-interface ItemProps {
-  open: boolean
-  delay: number
-}
-
-const NavItem = styled.li<ItemProps>`
+const NavItem = styled.li`
   color: ${props => props.theme.header.color};
   list-style: none;
   cursor: pointer;
@@ -84,7 +73,7 @@ const Burger = styled.div`
     display: block;
   }
 `
-const Line = styled.div<OpenableProps>`
+const Line = styled.div`
   width: 25px;
   height: 2px;
   background-color: rgb(226, 226, 226);
@@ -104,11 +93,7 @@ const Line3 = styled(Line)`
   transform: ${props => (props.open ? 'rotate(45deg) translate(-5px, -5px)' : '')};
 `
 
-interface Props {
-  site: Site
-}
-
-const HeaderClassic: React.FC<Props> = ({ site }) => {
+const HeaderClassic = ({ site }) => {
   const [open, setOpen] = useState(false)
   const [item, setItem] = useState('')
 
@@ -118,7 +103,7 @@ const HeaderClassic: React.FC<Props> = ({ site }) => {
         <Image image={site.logo} />
       </Logo>
       <NavItems open={open}>
-        {site.pages.map((page: Page, i: number) => {
+        {site.pages.map((page, i) => {
           return (
             <NavItem key={i} open={open} delay={i}>
               <StyledLink to={page.slug} onClick={() => setItem(page.name)}>
@@ -138,3 +123,7 @@ const HeaderClassic: React.FC<Props> = ({ site }) => {
 }
 
 export default HeaderClassic
+
+HeaderClassic.propTypes = {
+  site: PropTypes.object.isRequired,
+}

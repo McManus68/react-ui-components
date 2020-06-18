@@ -1,14 +1,15 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { useSelector } from 'react-redux'
 import Img from 'gatsby-image'
 
-interface Props {
-  image: any
-}
-
-const Image: React.FC<Props> = ({ image }) => {
-  const context = useSelector((state: { context: any }) => state.context)
+const Image = ({ image }) => {
+  const context = useSelector(state => state.context)
   return context === 'Gatsby' ? <Img fluid={image} Tag='div' /> : <img src={image} />
 }
 
 export default Image
+
+Image.propTypes = {
+  image: PropTypes.object.isRequired,
+}

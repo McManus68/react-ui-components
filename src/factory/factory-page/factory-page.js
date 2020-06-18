@@ -1,17 +1,17 @@
 import React from 'react'
-import { Page, Section } from '@bit/mcmanus68.webmaker.types.types'
+import PropTypes from 'prop-types'
 import SectionFactory from '@bit/mcmanus68.webmaker.factory.factory-section'
 
-interface Props {
-  page: Page
-}
-
-const FactoryPage: React.FC<Props> = ({ page }) => (
+const FactoryPage = ({ page }) => (
   <>
-    {page.sections.map((section: Section, i: number) => (
+    {page.sections.map((section, i) => (
       <SectionFactory key={i} section={section} recursive />
     ))}
   </>
 )
 
 export default FactoryPage
+
+FactoryPage.propTypes = {
+  page: PropTypes.object.isRequired,
+}

@@ -1,1 +1,1 @@
-export { default } from './footer-simple-content.tsx'
+export { default } from './footer-simple-content.js'

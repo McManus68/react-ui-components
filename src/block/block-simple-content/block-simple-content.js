@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { LoremIpsum } from 'react-lorem-ipsum'
 import Content from '@bit/mcmanus68.webmaker.ui.content'
 import Headline from '@bit/mcmanus68.webmaker.ui.headline'
@@ -16,21 +17,7 @@ const StyledLorem = styled(LoremIpsum)`
   line-height: 2rem;
 `
 
-interface Props {
-  title: string
-  subtitle?: string
-  description?: string
-  className?: string
-  buttonText?: string
-}
-
-const BlockSimpleContent: React.FC<Props> = ({
-  title,
-  subtitle,
-  description,
-  className = '',
-  buttonText,
-}) => {
+const BlockSimpleContent = ({ title, subtitle, description, className, buttonText }) => {
   return (
     <Content className={className}>
       <Headline title={title} subtitle={subtitle} />
@@ -42,3 +29,15 @@ const BlockSimpleContent: React.FC<Props> = ({
 }
 
 export default BlockSimpleContent
+
+BlockSimpleContent.propTypes = {
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
+  description: PropTypes.string,
+  className: PropTypes.string,
+  buttonText: PropTypes.string,
+}
+
+BlockSimpleContent.defaultProps = {
+  className: '',
+}

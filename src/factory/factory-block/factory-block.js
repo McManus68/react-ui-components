@@ -1,6 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Col } from 'react-bootstrap'
-import { Block, BlockType, AnimationType } from '@bit/mcmanus68.webmaker.types.types'
 import { reduceParams } from '@bit/mcmanus68.webmaker.utils.utils-param'
 import BlockImageGallery from '@bit/mcmanus68.webmaker.block.block-image-gallery'
 import BlockSimpleContent from '@bit/mcmanus68.webmaker.block.block-simple-content'
@@ -9,11 +9,7 @@ import FooterSimpleContent from '@bit/mcmanus68.webmaker.footer.footer-simple-co
 import FooterSocial from '@bit/mcmanus68.webmaker.footer.footer-social'
 import FooterNewsletter from '@bit/mcmanus68.webmaker.footer.footer-newsletter'
 
-interface Props {
-  block: Block
-}
-
-const FactoryBlock: React.FC<Props> = ({ block }) => {
+const FactoryBlock = ({ block }) => {
   const params = reduceParams(block.params)
   var content = (() => {
     switch (block.type) {
@@ -43,3 +39,7 @@ const FactoryBlock: React.FC<Props> = ({ block }) => {
 }
 
 export default FactoryBlock
+
+FactoryBlock.propTypes = {
+  block: PropTypes.object.isRequired,
+}
