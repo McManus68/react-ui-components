@@ -42,7 +42,7 @@ const BlockImageGallery = ({ images, display }) => {
 export default BlockImageGallery
 
 BlockImageGallery.propTypes = {
-  images: PropTypes.array,
+  images: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.object])),
   display: PropTypes.oneOf(['Square', 'Vertical', 'Horizontal']),
 }
 

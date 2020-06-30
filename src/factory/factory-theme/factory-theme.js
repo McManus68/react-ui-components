@@ -12,8 +12,8 @@ export function createTheme(theme) {
 export function defaultTheme() {
   return {
     color: {
-      primary: '#bd10e0',
-      secondary: '#402d9e',
+      primary: '#4c2bdb',
+      secondary: '#28682f',
       font: '#524e66',
       bg: '#ffffff',
     },

@@ -21,7 +21,7 @@ SectionHeadline.propTypes = {
   id: PropTypes.string,
   title: PropTypes.string,
   subtitle: PropTypes.string,
-  image: PropTypes.object,
+  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   height: PropTypes.number,
   overlay: PropTypes.string,
 }

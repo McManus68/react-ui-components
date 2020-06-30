@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { navigate } from 'gatsby'
 import { Container } from 'react-bootstrap'
 import SectionParallax from '@bit/mcmanus68.webmaker.section.section-parallax'
 import Button from '@bit/mcmanus68.webmaker.ui.button'
@@ -85,9 +84,7 @@ const AnimationContainer = styled.div`
 `
 
 const SectionHero = ({ title, subtitle, image, overlay }) => {
-  const goToHome = () => {
-    navigate('/')
-  }
+  const goToHome = () => {}
 
   return (
     <SectionParallax image={image} overlay={overlay} id='hero'>
@@ -114,7 +111,7 @@ export default SectionHero
 SectionHero.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
-  image: PropTypes.object,
+  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   overlay: PropTypes.string,
 }
 

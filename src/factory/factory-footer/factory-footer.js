@@ -12,14 +12,12 @@ const StyledFooter = styled.footer`
   position: relative;
 `
 
-const FactoryFooter = ({ footer }) => {
+const FactoryFooter = ({ footer, recursive, children }) => {
   return (
     <StyledFooter>
       <Container>
         <BackToTop />
-        {footer.rows.map((row, i) => (
-          <RowFactory key={i} row={row} />
-        ))}
+        {recursive ? footer.rows.map((row, i) => <RowFactory key={i} row={row} />) : children}
       </Container>
     </StyledFooter>
   )
@@ -29,4 +27,9 @@ export default FactoryFooter
 
 FactoryFooter.propTypes = {
   footer: PropTypes.object.isRequired,
+  recursive: PropTypes.bool,
+}
+
+FactoryFooter.defaultProps = {
+  recursive: true,
 }

@@ -15,12 +15,14 @@ const Overlay = styled.div`
 `
 
 const SectionParallax = ({ id, className, children, image, height, overlay }) => {
-  const context = useSelector(state => state.context)
+  const context = useSelector(state => state.context.name)
+  const url = useSelector(state => state.context.url)
+  const siteId = useSelector(state => state.editor?.currentSiteId)
 
   return (
     <section id={id} className={className}>
       <StyledParallax
-        bgImage={context === 'Gatsby' ? image.src : image}
+        bgImage={context === 'Gatsby' ? image.src : `${url}/images/${siteId}/${image}`}
         strength={300}
         bgImageStyle={{
           objectFit: 'cover',
@@ -40,7 +42,7 @@ SectionParallax.propTypes = {
   id: PropTypes.string,
   title: PropTypes.string,
   subtitle: PropTypes.string,
-  image: PropTypes.object,
+  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   height: PropTypes.number,
   overlay: PropTypes.string,
 }

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { LoremIpsum } from 'react-lorem-ipsum'
 import Content from '@bit/mcmanus68.webmaker.ui.content'
 import Headline from '@bit/mcmanus68.webmaker.ui.headline'
-import LinkText from '@bit/mcmanus68.webmaker.ui.link-text'
 import HeadlineSeparator from '@bit/mcmanus68.webmaker.ui.headline-separator'
 import styled from 'styled-components'
 
@@ -22,8 +21,7 @@ const BlockSimpleContent = ({ title, subtitle, description, className, buttonTex
     <Content className={className}>
       <Headline title={title} subtitle={subtitle} />
       <HeadlineSeparator />
-      {description ? <Paragraph>{description}</Paragraph> : <StyledLorem p={1} />}
-      <LinkText>{buttonText}</LinkText>
+      <Paragraph>{description ? { description } : <StyledLorem p={1} />}</Paragraph>
     </Content>
   )
 }

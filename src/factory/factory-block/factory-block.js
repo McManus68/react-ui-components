@@ -9,7 +9,7 @@ import FooterSimpleContent from '@bit/mcmanus68.webmaker.footer.footer-simple-co
 import FooterSocial from '@bit/mcmanus68.webmaker.footer.footer-social'
 import FooterNewsletter from '@bit/mcmanus68.webmaker.footer.footer-newsletter'
 
-const FactoryBlock = ({ block }) => {
+const FactoryBlock = ({ block, children }) => {
   const params = reduceParams(block.params)
   var content = (() => {
     switch (block.type) {
@@ -34,6 +34,7 @@ const FactoryBlock = ({ block }) => {
   return (
     <Col className={`${block.classes} my-auto`} {...block.responsive}>
       {content}
+      {children}
     </Col>
   )
 }
